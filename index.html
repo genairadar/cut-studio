@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Cut Studio ✦ GenAI Radar</title>
+    <meta
+      name="description"
+      content="Cut Studio by GenAI Radar. Create word or logo match cuts in your browser and export video."
+    />
+    <meta name="theme-color" content="#020617" />
+    <link rel="icon" href="assets/brand/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&family=Courier+Prime:wght@400;700&family=Caveat:wght@500;700&family=Oswald:wght@500;700&family=UnifrakturMaguntia&display=swap"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script type="module" src="assets/app.js"></script>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-spark" viewBox="0 0 24 24">
+        <path
+          d="M12 2.5c.6 5.2 4.3 8.9 9.5 9.5-5.2.6-8.9 4.3-9.5 9.5-.6-5.2-4.3-8.9-9.5-9.5 5.2-.6 8.9-4.3 9.5-9.5Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.2"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-left" viewBox="0 0 24 24">
+        <path
+          d="M15 5l-7 7 7 7"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-right" viewBox="0 0 24 24">
+        <path
+          d="M5 12h14M13 6l6 6-6 6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-down" viewBox="0 0 24 24">
+        <path
+          d="M12 4v11M7 10l5 5 5-5M5 20h14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path
+          d="M6 6l12 12M18 6 6 18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        />
+      </symbol>
+      <symbol id="i-dice" viewBox="0 0 24 24">
+        <path
+          d="M20 12a8 8 0 1 1-2.3-5.7M20 4v4h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+
+    <div class="view" id="vLanding">
+      <header class="lbar">
+        <div class="lbar-in">
+          <a class="brand" href="#top" aria-label="Cut Studio, home"
+            ><span class="brand-name">Cut Studio</span
+            ><svg class="brand-spark" width="18" height="18">
+              <use href="#i-spark" /></svg
+          ></a>
+          <nav class="lnav" aria-label="Sections">
+            <a href="#modes">Modes</a>
+            <a href="#exemples">Examples</a>
+            <a href="#fonctionnement">How it works</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+          <div class="lbar-r">
+            <div class="langsw" role="group" aria-label="Language">
+              <button type="button" data-lang="fr">FR</button
+              ><button type="button" data-lang="en">EN</button>
+            </div>
+            <a class="btn primary sm" href="#studio" data-go="studio"
+              >Open the studio</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-text">
+            <img
+              id="brandLogo"
+              class="hero-logo"
+              src="assets/brand/genai-radar.svg"
+              alt="GenAI Radar"
+              width="1358"
+              height="155"
+            />
+            <h1 class="hero-name">
+              Cut Studio<svg
+                class="hero-spark"
+                width="44"
+                height="44"
+                aria-hidden="true"
+              >
+                <use href="#i-spark" />
+              </svg>
+            </h1>
+            <p class="hero-lede">
+              Match cuts for your videos, on a word or on your logo. Dozens of
+              pages or backdrops flash by while your subject stays fixed in the
+              center.
+            </p>
+            <div class="hero-cta">
+              <a class="btn primary" href="#studio" data-go="studio"
+                >Open the studio<svg width="18" height="18" aria-hidden="true">
+                  <use href="#i-right" /></svg
+              ></a>
+              <a class="btn ghost" href="#exemples">See examples</a>
+            </div>
+            <ul class="hero-facts">
+              <li>Rendered in the browser</li>
+              <li>MP4 up to 1080p</li>
+              <li>9:16, 4:5, 1:1, 16:9</li>
+            </ul>
+          </div>
+          <div class="hero-visual">
+            <div class="phone">
+              <canvas
+                id="heroCanvas"
+                width="360"
+                height="640"
+                aria-label="Animated match cut preview"
+              ></canvas>
+            </div>
+            <p class="hero-cap" id="heroCap">Word mode</p>
+          </div>
+        </section>
+
+        <section class="lsec" id="modes">
+          <div class="lsec-head">
+            <h2>Two modes</h2>
+            <p>
+              Same principle, two subjects. The studio keeps the subject's
+              position and size from one cut to the next, which is what creates
+              the effect.
+            </p>
+          </div>
+          <div class="modes">
+            <article class="mode-card">
+              <canvas id="mcText" width="480" height="600"></canvas>
+              <div class="mode-body">
+                <h3>Word</h3>
+                <p>
+                  A word or a short phrase highlighted in newspaper, book, code
+                  or encyclopedia pages generated for every cut.
+                </p>
+                <a
+                  class="btn ghost"
+                  href="#studio"
+                  data-go="studio"
+                  data-mode="text"
+                  >Try it with a word</a
+                >
+              </div>
+            </article>
+            <article class="mode-card">
+              <canvas id="mcLogo" width="480" height="600"></canvas>
+              <div class="mode-body">
+                <h3>Logo</h3>
+                <p>
+                  Your logo placed in perspective on 46 real-life photos, from a
+                  street pole to a shop window, in black or white depending on
+                  the surface.
+                </p>
+                <a
+                  class="btn ghost"
+                  href="#studio"
+                  data-go="studio"
+                  data-mode="logo"
+                  >Try it with your logo</a
+                >
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="lsec" id="exemples">
+          <div class="lsec-head">
+            <h2>Examples</h2>
+            <p>
+              Four starting presets. Each one opens the studio with style,
+              rhythm and sound already set.
+            </p>
+          </div>
+          <div class="examples" id="examples"></div>
+        </section>
+
+        <section class="lsec" id="fonctionnement">
+          <div class="lsec-head">
+            <h2>How it works</h2>
+            <p>Three steps, no account and no upload.</p>
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="step-n">01</span><b>Pick the subject</b>
+              <p>
+                A word or a phrase up to 40 characters, or a PNG, SVG or JPG
+                logo.
+              </p>
+            </li>
+            <li>
+              <span class="step-n">02</span><b>Tune the look</b>
+              <p>
+                Pages or backdrops, fixed rhythm or synced to your music, flash,
+                sound effects. The preview follows every change.
+              </p>
+            </li>
+            <li>
+              <span class="step-n">03</span><b>Export</b>
+              <p>
+                The video records in real time, as MP4 when the browser allows
+                it, otherwise as WebM.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="lsec" id="formats">
+          <div class="lsec-head">
+            <h2>Output formats</h2>
+            <p>
+              Resolutions are set on the short side of the frame, 1080 or 720
+              pixels.
+            </p>
+          </div>
+          <div class="formats" id="formatList"></div>
+        </section>
+
+        <section class="lsec" id="faq">
+          <div class="lsec-head">
+            <h2>FAQ</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Where are the videos rendered?</summary>
+              <p>
+                In your browser. Pages are generated in code for each cut and
+                nothing is sent to a server, including the logo and music you
+                import.
+              </p>
+            </details>
+            <details>
+              <summary>Why does the export take as long as the video?</summary>
+              <p>
+                Recording captures the render frame by frame together with the
+                sound, so the sound effects stay in sync with the cuts. Keep the
+                tab visible during the export, a background tab slows rendering
+                down.
+              </p>
+            </details>
+            <details>
+              <summary>MP4 or WebM?</summary>
+              <p>
+                Recent Chrome, Edge and Safari record straight to MP4 (H.264).
+                Firefox only records WebM. The chosen format shows in the export
+                window.
+              </p>
+            </details>
+            <details>
+              <summary>Where do the photo backdrops come from?</summary>
+              <p>
+                They are 46 photorealistic scenes generated for the tool, in the
+                street, shops, transport, at home, at the office or worn. On
+                each one, an area is mapped on the surface of an object. Your
+                logo is warped in perspective there and turns black or white
+                depending on how bright the surface is.
+              </p>
+            </details>
+            <details>
+              <summary>How do I sync the cuts to the music?</summary>
+              <p>
+                Import a track in the Sound tab, then choose "Synced to the
+                music" in the Rhythm tab. The tempo is detected automatically
+                and each cut lands on a beat, every two beats or every bar.
+              </p>
+            </details>
+            <details>
+              <summary>Which logo file should I use?</summary>
+              <p>
+                A transparent PNG or an SVG gives the best result. A JPG keeps
+                its rectangular background. Empty margins around the logo are
+                trimmed automatically.
+              </p>
+            </details>
+            <details>
+              <summary>Do the page texts mean anything?</summary>
+              <p>
+                No. They are sentences assembled from a word list, in French or
+                English depending on the visuals language. Only your word is
+                sharp and readable, the rest is texture.
+              </p>
+            </details>
+            <details>
+              <summary>How do I make the exact same video again?</summary>
+              <p>
+                Each video depends on a seed number shown under the preview.
+                Save the preset with a name in the Output tab, it keeps that
+                number and every setting in this browser.
+              </p>
+            </details>
+          </div>
+        </section>
+
+        <section class="closing">
+          <h2>Start an edit</h2>
+          <p>
+            The studio opens with a default preset. Type your word or import
+            your logo and the preview starts right away.
+          </p>
+          <a class="btn primary" href="#studio" data-go="studio"
+            >Open the studio<svg width="18" height="18" aria-hidden="true">
+              <use href="#i-right" /></svg
+          ></a>
+        </section>
+      </main>
+
+      <footer class="lfoot">
+        <div class="lfoot-brand">
+          <img class="flogo" alt="GenAI Radar" width="1358" height="155" /><span
+            >Cut Studio · Hugo Mourlevat</span
+          >
+        </div>
+        <span>Rendered locally, no data sent</span>
+      </footer>
+    </div>
+
+    <div class="view" id="vStudio" hidden>
+      <header class="abar">
+        <div class="abar-l">
+          <a
+            class="iconbtn"
+            href="#top"
+            data-go="landing"
+            aria-label="Back to home"
+            ><svg width="20" height="20"><use href="#i-left" /></svg
+          ></a>
+          <a
+            class="brand"
+            href="#top"
+            data-go="landing"
+            aria-label="Cut Studio, home"
+            ><span class="brand-name">Cut Studio</span
+            ><svg class="brand-spark" width="16" height="16">
+              <use href="#i-spark" /></svg
+          ></a>
+        </div>
+        <div class="abar-c">
+          <div class="seg modeseg" role="radiogroup" aria-label="Mode">
+            <label
+              ><input
+                type="radio"
+                name="mode"
+                value="text"
+                form="panel"
+                checked
+              /><span>Word</span></label
+            >
+            <label
+              ><input type="radio" name="mode" value="logo" form="panel" /><span
+                >Logo</span
+              ></label
+            >
+          </div>
+          <div class="seg ratioseg" role="radiogroup" aria-label="Format">
+            <label
+              ><input
+                type="radio"
+                name="ratio"
+                value="9:16"
+                form="panel"
+                checked
+              /><span>9:16</span></label
+            >
+            <label
+              ><input type="radio" name="ratio" value="4:5" form="panel" /><span
+                >4:5</span
+              ></label
+            >
+            <label
+              ><input type="radio" name="ratio" value="1:1" form="panel" /><span
+                >1:1</span
+              ></label
+            >
+            <label
+              ><input
+                type="radio"
+                name="ratio"
+                value="16:9"
+                form="panel"
+              /><span>16:9</span></label
+            >
+          </div>
+        </div>
+        <div class="abar-r">
+          <div class="langsw" role="group" aria-label="Language">
+            <button type="button" data-lang="fr">FR</button
+            ><button type="button" data-lang="en">EN</button>
+          </div>
+          <button class="btn primary sm" type="button" id="exportOpen">
+            <svg width="16" height="16" aria-hidden="true">
+              <use href="#i-down" /></svg
+            ><span>Export</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <section class="stage" aria-label="Preview">
+          <div class="screenbox" id="screenbox">
+            <div class="screen" id="screen">
+              <canvas id="preview"></canvas>
+              <div class="loading" id="loading">Loading fonts…</div>
+            </div>
+          </div>
+          <div class="dock">
+            <div class="transport">
+              <button
+                class="tbtn play"
+                id="play"
+                type="button"
+                aria-label="Play"
+              >
+                <svg id="playIcon" viewBox="0 0 16 16">
+                  <path d="M4 2.5v11l9-5.5z" /></svg
+                ><span id="playLabel">Play</span>
+              </button>
+              <span class="tc" id="tc">00:00:00</span>
+              <span class="tmeta" id="cutInfo">Plan 1 / 48</span>
+              <span class="spacer"></span>
+              <span class="tmeta" id="seedInfo">Tirage 1234</span>
+              <button class="tbtn" id="reroll" type="button">
+                <svg width="15" height="15" aria-hidden="true">
+                  <use href="#i-dice" /></svg
+                ><span>New draw</span>
+              </button>
+            </div>
+            <div class="timeline" id="timeline">
+              <canvas id="tl"></canvas>
+              <div class="playhead" id="playhead"></div>
+            </div>
+          </div>
+
+          <div
+            class="sheet"
+            id="exportSheet"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="exTitle"
+            hidden
+          >
+            <div class="sheet-card">
+              <div class="sheet-head">
+                <h2 id="exTitle">Export video</h2>
+                <button
+                  class="iconbtn"
+                  type="button"
+                  id="exportClose"
+                  aria-label="Close"
+                >
+                  <svg width="18" height="18"><use href="#i-close" /></svg>
+                </button>
+              </div>
+              <dl class="exsum" id="exSum"></dl>
+              <div class="exrow">
+                <button class="btn primary" id="exportBtn" type="button">
+                  Start export</button
+                ><span class="exinfo" id="exInfo"></span>
+              </div>
+              <div class="progress" id="progress" hidden><i id="bar"></i></div>
+              <p class="msg" id="exMsg" hidden></p>
+              <div class="result" id="result" hidden>
+                <video id="outVideo" controls playsinline loop></video>
+                <div class="rtext">
+                  <span class="fname" id="outInfo"></span>
+                  <button class="btn primary sm" id="saveBtn" type="button">
+                    Save file
+                  </button>
+                  <span class="msg" id="saveMsg"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <form
+          class="panel"
+          id="panel"
+          autocomplete="off"
+          onsubmit="return false;"
+        >
+          <div class="tabs" role="tablist" aria-label="Settings">
+            <button
+              type="button"
+              role="tab"
+              id="tab-content"
+              aria-controls="pane-content"
+              aria-selected="true"
+            >
+              Content
+            </button>
+            <button
+              type="button"
+              role="tab"
+              id="tab-style"
+              aria-controls="pane-style"
+              aria-selected="false"
+            >
+              Style
+            </button>
+            <button
+              type="button"
+              role="tab"
+              id="tab-rhythm"
+              aria-controls="pane-rhythm"
+              aria-selected="false"
+            >
+              Rhythm
+            </button>
+            <button
+              type="button"
+              role="tab"
+              id="tab-sound"
+              aria-controls="pane-sound"
+              aria-selected="false"
+            >
+              Sound
+            </button>
+            <button
+              type="button"
+              role="tab"
+              id="tab-output"
+              aria-controls="pane-output"
+              aria-selected="false"
+            >
+              Output
+            </button>
+          </div>
+
+          <div class="panes">
+            <div
+              class="pane"
+              role="tabpanel"
+              id="pane-content"
+              aria-labelledby="tab-content"
+            >
+              <fieldset class="group" id="grpText">
+                <legend>Text</legend>
+                <div class="field">
+                  <label for="word">Word or phrase</label>
+                  <div class="wordin">
+                    <input
+                      type="text"
+                      id="word"
+                      maxlength="40"
+                      value="design system"
+                    /><span class="count" id="count">13/40</span>
+                  </div>
+                </div>
+                <div class="two">
+                  <div class="field">
+                    <label for="textCase">Case</label>
+                    <select id="textCase">
+                      <option value="asis">As typed</option>
+                      <option value="upper">Uppercase</option>
+                      <option value="lower">Lowercase</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="wordFont">Word font</label>
+                    <select id="wordFont">
+                      <option value="page">Same as the page</option>
+                      <option value="play">Playfair Display</option>
+                      <option value="osw">Oswald</option>
+                      <option value="plex">IBM Plex Sans</option>
+                      <option value="mono">IBM Plex Mono</option>
+                    </select>
+                  </div>
+                </div>
+                <label class="check"
+                  ><input type="checkbox" id="bold" /> Bold word</label
+                >
+              </fieldset>
+
+              <fieldset class="group" id="grpLogo" hidden>
+                <legend>Logo</legend>
+                <div class="logopick">
+                  <div class="logothumb">
+                    <img id="logoThumb" alt="Logo preview" />
+                  </div>
+                  <div class="field">
+                    <input
+                      type="file"
+                      id="logoFile"
+                      accept="image/png,image/svg+xml,image/jpeg,image/webp"
+                      hidden
+                    />
+                    <div class="inline">
+                      <button class="btn ghost sm" type="button" id="logoBtn">
+                        Upload a logo</button
+                      ><button
+                        class="btn ghost sm"
+                        type="button"
+                        id="logoReset"
+                        hidden
+                      >
+                        Remove
+                      </button>
+                    </div>
+                    <span class="fname" id="logoName">GenAI Radar logo</span>
+                  </div>
+                </div>
+                <p class="hint">
+                  Transparent PNG or SVG preferred. The logo keeps the same size
+                  for the whole video.
+                </p>
+              </fieldset>
+
+              <fieldset class="group">
+                <legend>Language of the visuals</legend>
+                <div class="field">
+                  <label for="contentLang">Text generated in the pages</label
+                  ><select id="contentLang">
+                    <option value="ui">Same as the interface</option>
+                    <option value="fr">French</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+              </fieldset>
+            </div>
+
+            <div
+              class="pane"
+              role="tabpanel"
+              id="pane-style"
+              aria-labelledby="tab-style"
+              hidden
+            >
+              <fieldset class="group" id="grpPages">
+                <legend>Pages</legend>
+                <div class="chips" id="tplChips"></div>
+                <p class="hint">
+                  Each cut picks a random layout from the selected families.
+                </p>
+              </fieldset>
+
+              <fieldset class="group" id="grpHl">
+                <legend>Highlight</legend>
+                <div class="two">
+                  <div class="field">
+                    <label for="hlStyle">Style</label
+                    ><select id="hlStyle">
+                      <option value="marker">Marker</option>
+                      <option value="block">Solid block</option>
+                      <option value="underline">Underline</option>
+                      <option value="frame">Frame</option>
+                      <option value="none">None</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="hlColor">Color</label>
+                    <div class="colorrow">
+                      <input
+                        type="color"
+                        id="hlColor"
+                        value="#ffe14d"
+                        aria-label="Highlight color"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="wordColorMode">Word color</label>
+                  <div class="colorrow">
+                    <select id="wordColorMode">
+                      <option value="auto">Automatic</option>
+                      <option value="custom">Custom</option></select
+                    ><input
+                      type="color"
+                      id="wordColor"
+                      value="#111111"
+                      aria-label="Word color"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="group" id="grpScenes" hidden>
+                <legend>Backdrops</legend>
+                <div class="field">
+                  <label for="logoScenes">Backdrop type</label
+                  ><select id="logoScenes">
+                    <option value="photo">Real-life photos</option>
+                    <option value="illus">Illustrated objects</option>
+                  </select>
+                </div>
+                <div class="field" id="photoOpts">
+                  <span class="lab">Places</span>
+                  <div class="chips" id="sceneChips"></div>
+                  <p class="hint" id="sceneFit" hidden></p>
+                  <p class="hint" id="sceneHint">
+                    46 photo backdrops. The logo is placed in perspective
+                    directly on the material of each object.
+                  </p>
+                </div>
+                <div id="illusOpts" class="sub">
+                  <div class="field">
+                    <label for="finish">Finish</label
+                    ><select id="finish">
+                      <option value="auto">Depends on the object</option>
+                      <option value="print">Print</option>
+                      <option value="sticker">Sticker</option>
+                      <option value="stamp">Stamp</option>
+                      <option value="embroid">Embroidery</option>
+                      <option value="emboss">Emboss</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <span class="lab">Objects</span>
+                    <div class="chips" id="objChips"></div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="group" id="grpLogoColor" hidden>
+                <legend>Logo color</legend>
+                <div class="colorrow">
+                  <select id="logoColor" aria-label="Logo color">
+                    <option value="auto">
+                      Black or white to suit the background
+                    </option>
+                    <option value="original">Original colors</option>
+                    <option value="dark">Black</option>
+                    <option value="light">White</option>
+                    <option value="custom">Custom</option></select
+                  ><input
+                    type="color"
+                    id="logoCustom"
+                    value="#111111"
+                    aria-label="Custom logo color"
+                  />
+                </div>
+              </fieldset>
+
+              <fieldset class="group">
+                <legend>Framing</legend>
+                <div class="field">
+                  <div class="rowlab">
+                    <label for="zoom" id="zoomLab">Zoom</label
+                    ><output id="o_zoom"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="zoom"
+                    min="0.8"
+                    max="3"
+                    step="0.1"
+                    value="1.5"
+                  />
+                </div>
+                <div class="field">
+                  <div class="rowlab">
+                    <label for="blur">Background blur</label
+                    ><output id="o_blur"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="blur"
+                    min="0"
+                    max="3"
+                    step="0.1"
+                    value="1"
+                  />
+                </div>
+                <div class="two">
+                  <div class="field">
+                    <div class="rowlab">
+                      <label for="tilt">Tilt</label
+                      ><output id="o_tilt"></output>
+                    </div>
+                    <input
+                      type="range"
+                      id="tilt"
+                      min="0"
+                      max="5"
+                      step="0.5"
+                      value="1.5"
+                    />
+                  </div>
+                  <div class="field" id="sizeVarField">
+                    <div class="rowlab">
+                      <label for="sizeVar">Size variation</label
+                      ><output id="o_sizeVar"></output>
+                    </div>
+                    <input
+                      type="range"
+                      id="sizeVar"
+                      min="0"
+                      max="30"
+                      step="1"
+                      value="8"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="rowlab">
+                    <label for="vignette">Vignette</label
+                    ><output id="o_vignette"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="vignette"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    value="0.25"
+                  />
+                </div>
+              </fieldset>
+            </div>
+
+            <div
+              class="pane"
+              role="tabpanel"
+              id="pane-rhythm"
+              aria-labelledby="tab-rhythm"
+              hidden
+            >
+              <fieldset class="group">
+                <legend>Length and pace</legend>
+                <div class="field">
+                  <div class="rowlab">
+                    <label for="duration">Cut sequence length</label
+                    ><output id="o_duration"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="duration"
+                    min="1"
+                    max="12"
+                    step="0.5"
+                    value="4"
+                  />
+                </div>
+                <div class="field">
+                  <label for="rhythm">Pacing</label
+                  ><select id="rhythm">
+                    <option value="constant">Steady</option>
+                    <option value="accel">Speeds up</option>
+                    <option value="decel">Slows down</option>
+                    <option value="beat">Synced to the music</option>
+                  </select>
+                </div>
+                <div class="field" id="cpsField">
+                  <div class="rowlab">
+                    <label for="cps">Cuts per second</label
+                    ><output id="o_cps"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="cps"
+                    min="2"
+                    max="24"
+                    step="1"
+                    value="12"
+                  />
+                </div>
+                <div class="sub" id="beatRow" hidden>
+                  <div class="field">
+                    <label for="beatDiv">Cuts</label
+                    ><select id="beatDiv">
+                      <option value="1">On every beat</option>
+                      <option value="2">Every two beats</option>
+                      <option value="4">Every bar</option>
+                      <option value="0.5">Twice per beat</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <div class="rowlab">
+                      <label for="musicStart">Start in the music</label
+                      ><output id="o_musicStart"></output>
+                    </div>
+                    <input
+                      type="range"
+                      id="musicStart"
+                      min="0"
+                      max="60"
+                      step="0.5"
+                      value="0"
+                    />
+                  </div>
+                  <p class="hint" id="beatHint"></p>
+                </div>
+                <div class="field">
+                  <div class="rowlab">
+                    <label for="hold">Final hold</label
+                    ><output id="o_hold"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="hold"
+                    min="0"
+                    max="3"
+                    step="0.25"
+                    value="0.5"
+                  />
+                </div>
+              </fieldset>
+              <fieldset class="group">
+                <legend>Cut effects</legend>
+                <div class="field">
+                  <div class="rowlab">
+                    <label for="flash">White flash</label
+                    ><output id="o_flash"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="flash"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    value="0"
+                  />
+                </div>
+                <div class="field">
+                  <div class="rowlab">
+                    <label for="punch">Zoom punch</label
+                    ><output id="o_punch"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="punch"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    value="0"
+                  />
+                </div>
+              </fieldset>
+            </div>
+
+            <div
+              class="pane"
+              role="tabpanel"
+              id="pane-sound"
+              aria-labelledby="tab-sound"
+              hidden
+            >
+              <fieldset class="group">
+                <legend>Sound effect</legend>
+                <div class="field">
+                  <label for="sound">Sound on each cut</label
+                  ><select id="sound">
+                    <option value="paper">Paper sheet</option>
+                    <option value="shutter">Shutter</option>
+                    <option value="film">Film advance</option>
+                    <option value="polaroid">Polaroid</option>
+                    <option value="flash">Flash</option>
+                    <option value="click">Click</option>
+                    <option value="none">None</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <div class="rowlab">
+                    <label for="sfxVol">Volume</label
+                    ><output id="o_sfxVol"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="sfxVol"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    value="0.8"
+                  />
+                </div>
+              </fieldset>
+              <fieldset class="group">
+                <legend>Music</legend>
+                <div class="file">
+                  <input
+                    type="file"
+                    id="music"
+                    accept="audio/*"
+                    hidden
+                  /><button class="btn ghost sm" type="button" id="musicBtn">
+                    Choose an audio file</button
+                  ><button
+                    class="btn ghost sm"
+                    type="button"
+                    id="musicClear"
+                    hidden
+                  >
+                    Remove
+                  </button>
+                </div>
+                <span class="fname" id="musicName">No music</span>
+                <div class="field" id="musicVolRow" hidden>
+                  <div class="rowlab">
+                    <label for="musicVol">Music volume</label
+                    ><output id="o_musicVol"></output>
+                  </div>
+                  <input
+                    type="range"
+                    id="musicVol"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    value="0.6"
+                  />
+                </div>
+              </fieldset>
+              <fieldset class="group">
+                <legend>Preview</legend>
+                <label class="check"
+                  ><input type="checkbox" id="previewSound" /> Sound in
+                  preview</label
+                >
+              </fieldset>
+            </div>
+
+            <div
+              class="pane"
+              role="tabpanel"
+              id="pane-output"
+              aria-labelledby="tab-output"
+              hidden
+            >
+              <fieldset class="group">
+                <legend>File</legend>
+                <div class="two">
+                  <div class="field">
+                    <label for="res">Resolution</label
+                    ><select id="res">
+                      <option value="1080">1080p</option>
+                      <option value="720">720p</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="fps">Frames per second</label
+                    ><select id="fps">
+                      <option value="30">30</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="group">
+                <legend>Preview</legend>
+                <div class="field">
+                  <label for="quality">Preview quality</label
+                  ><select id="quality">
+                    <option value="eco">Light</option>
+                    <option value="std" selected>Standard</option>
+                    <option value="high">High</option>
+                  </select>
+                </div>
+                <p class="hint">
+                  The preview runs at low resolution to spare your machine.
+                  Exports are always at full resolution.
+                </p>
+              </fieldset>
+              <fieldset class="group">
+                <legend>Saved presets</legend>
+                <div class="inline">
+                  <input
+                    type="text"
+                    id="presetName"
+                    placeholder="Preset name"
+                    maxlength="40"
+                  /><button class="btn ghost sm" type="button" id="presetSave">
+                    Save
+                  </button>
+                </div>
+                <div class="presets" id="presetList"></div>
+              </fieldset>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
